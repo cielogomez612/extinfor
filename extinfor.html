@@ -1,0 +1,526 @@
+<html lang="es"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Recarga de extintores en Colombia. Servicio de recarga, mantenimiento y revisión de extintores con atención rápida, segura y certificada. Recarga de extintores ABC, CO2 y multipropósito. Cotiza tu recarga de extintores por WhatsApp.">
+
+<title>ExtinFor | Recarga de Extintores y Mantenimiento Rápido</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+  --primary:#f4f146;
+  --neon:#f6ff00;
+  --bg:#050507;
+  --card:#0f1a12;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:#e5e7eb;
+}
+
+/* NAV */
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px;
+  background:#000;
+  border-bottom:1px solid #1f2937;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.logo{
+  font-family:'Orbitron';
+  color:var(--primary);
+  font-size:1.8rem;
+}
+
+.menu{
+  display:flex;
+  gap:20px;
+}
+
+.menu a{
+  color:#e5e7eb;
+  text-decoration:none;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.menu a:hover{
+  color:var(--primary);
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:100px 20px;
+  background: radial-gradient(circle, rgba(34,197,94,0.2), transparent);
+}
+
+.hero h1{
+  font-family:'Orbitron';
+  font-size:3rem;
+  text-shadow:0 0 20px var(--primary);
+}
+
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:15px 25px;
+  background:var(--primary);
+  border-radius:10px;
+  box-shadow:0 0 15px var(--primary);
+  color:#000;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* SECTIONS */
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:60px 20px;
+}
+
+.section h2{
+  font-family:'Orbitron';
+  color:var(--primary);
+  margin-bottom:30px;
+}
+
+/* CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:var(--card);
+  padding:25px;
+  border-radius:15px;
+  border:1px solid #b19f02;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 20px rgba(175, 172, 1, 0.4);
+}
+
+.card i{
+  font-size:28px;
+  color:var(--primary);
+  margin-bottom:10px;
+}
+
+/* FOOTER */
+.footer{
+  text-align:center;
+  padding:30px;
+  border-top:1px solid #1f2937;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#22c55e;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#000;
+  font-size:26px;
+}
+.footer p {
+  margin:5px 0;
+}
+
+.footer strong {
+  color: var(--primary);
+  font-family: 'Orbitron';
+}
+.hero-pro{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:100px 20px;
+  max-width:1200px;
+  margin:auto;
+  gap:40px;
+}
+
+/* TEXTO */
+.hero-content{
+  max-width:550px;
+}
+
+.hero-pro h1{
+  font-family:'Orbitron';
+  font-size:3rem;
+  color:#e5e7eb;
+  text-shadow:0 0 20px #fafa06;
+}
+
+.hero-pro p{
+  margin-top:15px;
+  color:#9ca3af;
+  font-size:1.1rem;
+}
+
+.btn-outline{
+  padding:15px 25px;
+  border:1px solid #f3f705;
+  color:#f3f705;
+  border-radius:10px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.btn-outline:hover{
+  background:#dff800;
+  color:#000;
+}
+
+/* VISUAL DERECHO */
+.hero-visual{
+  position:relative;
+  width:300px;
+  height:300px;
+}
+
+/* GLOW PRINCIPAL */
+.extintor-glow{
+  width:120px;
+  height:220px;
+  background:linear-gradient(180deg,#f4fc04,#b1a60c);
+  border-radius:20px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  box-shadow:0 0 40px #f3f705, inset 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* ANILLOS */
+.ring{
+  position:absolute;
+  width:280px;
+  height:280px;
+  border:1px solid rgba(243, 252, 0, 0.3);
+  border-radius:50%;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  animation:spin 10s linear infinite;
+}
+
+.ring2{
+  width:220px;
+  height:220px;
+  animation-direction:reverse;
+  animation-duration:6s;
+}
+
+/* ANIMACIÓN */
+@keyframes spin{
+  from{transform:translate(-50%,-50%) rotate(0deg);}
+  to{transform:translate(-50%,-50%) rotate(360deg);}
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-pro{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero-visual{
+    margin-top:40px;
+  }
+}
+.hero-buttons a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:220px; /* mismo ancho */
+  height:55px; /* misma altura */
+  border-radius:12px;
+  font-weight:600;
+  text-decoration:none;
+  font-size:16px;
+  transition:0.3s;
+}
+
+/* BOTÓN PRINCIPAL */
+.btn{
+  background:#e6ed11;
+  color:#000;
+  box-shadow:0 0 15px #e6ed11;
+}
+
+/* BOTÓN SECUNDARIO */
+.btn-outline{
+  border:1px solid #e6ed11;
+  color:#e6ed11;
+  background:transparent;
+}
+
+/* HOVER */
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 25px #e6ed11;
+}
+
+.btn-outline:hover{
+  background:#e6ed11;
+  color:#000;
+}
+</style>
+</head>
+
+<body>
+
+<div class="nav">
+  <div class="logo">ExtinFor</div>
+  <div class="menu">
+    <a href="#extintores">Extintores</a>
+    <a href="#digitales">Digitales</a>
+    <a href="#cobertura">Cobertura</a>
+    <a href="#terminos">Términos</a>
+    <a href="#privacidad">Privacidad</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</div>
+
+<section class="hero-pro">
+  <div class="hero-content">
+    <h1>Recarga de Extintores en Colombia en 24h</h1>
+    <p>Servicio certificado, rápido y sin interrupciones para tu negocio.</p>
+
+    <div class="hero-buttons">
+      <a href="https://wa.me/573102509697" class="btn">Cotiza en 1 minuto</a>
+      <a href="#contacto" class="btn-outline">Recarga en Linea</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="extintor-glow"></div>
+    <div class="ring"></div>
+    <div class="ring ring2"></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>¿Por qué elegir ExtinFor?</h2>
+  <div class="grid">
+
+    <div class="card">
+      <h3>Entrega en 24h</h3>
+      <p>Atención rápida sin afectar tu operación.</p>
+    </div>
+
+    <div class="card">
+      <h3>Cumple normativas</h3>
+      <p>Evita multas y problemas legales.</p>
+    </div>
+
+    <div class="card">
+      <h3>Atención directa</h3>
+      <p>Sin intermediarios ni sobrecostos.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="extintores" class="section">
+  <h2><i class="fas fa-fire-extinguisher"></i> Servicios de Extintores</h2>
+  <div class="grid">
+
+    <div class="card">
+      <i class="fas fa-oil-can"></i>
+      <h3>Recarga de extintores</h3>
+      <p>Servicio profesional para todo tipo de extintores.</p>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-tools"></i>
+      <h3>Mantenimiento</h3>
+      <p>Revisión completa del sistema contra incendios.</p>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-search"></i>
+      <h3>Inspección técnica</h3>
+      <p>Evaluación del estado y funcionamiento.</p>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-shield-alt"></i>
+      <h3>Asesoría</h3>
+      <p>Normativas y seguridad industrial.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="digitales" class="section">
+  <h2><i class="fas fa-mobile-alt"></i> Servicios Digitales</h2>
+  <div class="grid">
+ <div class="card">
+      <i class="fas fa-wallet"></i>
+      <h3>Recarga Nequi</h3>
+      <p>Apoyo en recargas digitales de forma informativa.</p>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-university"></i>
+      <h3>Pagos PSE</h3>
+      <p>Orientación para pagos electrónicos.</p>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-lock"></i>
+      <h3>Seguridad</h3>
+      <p>No solicitamos claves ni códigos personales.</p>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-headset"></i>
+      <h3>Soporte</h3>
+      <p>Atención vía WhatsApp.</p>
+    </div>
+
+  </div>
+</section>
+<section id="cobertura" class="section">
+  <h2><i class="fas fa-map-marker-alt"></i> Cobertura</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <p><i class="fas fa-city"></i> <strong>Bogotá</strong></p>
+    </div>
+
+    <div class="card">
+      <p><i class="fas fa-city"></i> <strong>Tocancipá</strong></p>
+    </div>
+
+    <div class="card">
+      <p><i class="fas fa-city"></i> <strong>Cajicá</strong></p>
+    </div>
+
+    <div class="card">
+      <p><i class="fas fa-city"></i> <strong>Zipaquirá</strong></p>
+    </div>
+
+    <div class="card">
+      <p><i class="fas fa-city"></i> <strong>Chía</strong></p>
+    </div>
+
+    <div class="card">
+      <p><i class="fas fa-city"></i> <strong>Sopó</strong></p>
+    </div>
+
+    <div class="card">
+      <p><i class="fas fa-city"></i> <strong>Funza</strong></p>
+    </div>
+
+    <div class="card">
+      <p><i class="fas fa-city"></i> <strong>Mosquera</strong></p>
+    </div>
+
+    <div class="card">
+      <p><i class="fas fa-city"></i> <strong>Medellín</strong></p>
+    </div>
+
+    <div class="card">
+      <p><i class="fas fa-city"></i> <strong>Cali</strong></p>
+    </div>
+
+    <div class="card">
+      <p><i class="fas fa-city"></i> <strong>Barranquilla</strong></p>
+    </div>
+
+    <div class="card">
+      <p><i class="fas fa-city"></i> <strong>Bucaramanga</strong></p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="terminos" class="section">
+  <h2><i class="fas fa-file-contract"></i> Términos</h2>
+
+  <div class="card">
+    <p>Servicios sujetos a disponibilidad.</p>
+    <p>Confirmar horarios previamente.</p>
+    <p>Validar pagos realizados.</p>
+    <p>No pedimos datos sensibles.</p>
+  </div>
+</section>
+
+<section id="privacidad" class="section">
+  <h2><i class="fas fa-user-shield"></i> Privacidad</h2>
+
+  <div class="card">
+    <p>No compartimos información.</p>
+    <p>No guardamos datos bancarios.</p>
+    <p>Uso exclusivo de contacto.</p>
+  </div>
+</section>
+
+<section id="contacto" class="section">
+  <h2><i class="fas fa-phone"></i> Contacto</h2>
+
+  <div class="card">
+    <p>WhatsApp: 3102509697</p>
+    <p>Email: extinfor@gmail.com</p>
+  </div>
+</section>
+
+<section class="hero">
+  <h2>¿Necesitas recargar extintores?</h2>
+  <p>Atención rápida y segura.</p>
+
+  <a href="https://wa.me/573102509697" class="btn">
+    Hablar por WhatsApp
+  </a>
+</section>
+
+<div class="footer">
+  <p><strong>ExtinFor</strong></p>
+  
+  <p>Tv. 7 #59-13, Soacha, Cundinamarca</p>
+
+  <p style="margin-top:10px;">
+    WhatsApp: 3102509697 | Email: extinfor@gmail.com
+  </p>
+
+  <p style="margin-top:10px; font-size:14px; color:#9ca3af;">
+    © 2026 ExtinFor | Todos los derechos reservados
+  </p>
+</div>
+
+<a href="https://wa.me/573102509697" class="whatsapp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+
+</body></html>
