@@ -295,29 +295,64 @@ body{
    NAV RESPONSIVE CELULAR
 ========================= */
 
+/* =========================
+   NAV RESPONSIVE CELULAR
+========================= */
+
+.menu-toggle{
+  display:none;
+  font-size:28px;
+  color:var(--primary);
+  cursor:pointer;
+}
+
 @media(max-width:768px){
 
   .nav{
-    flex-direction:column;
-    align-items:flex-start;
-    padding:15px;
-    gap:15px;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
   }
 
   .logo{
     font-size:1.5rem;
   }
 
+  /* BOTON HAMBURGUESA */
+  .menu-toggle{
+    display:block;
+  }
+
+  /* MENU OCULTO */
   .menu{
+    position:absolute;
+    top:75px;
+    left:0;
     width:100%;
-    display:flex;
+    background:#000;
     flex-direction:column;
+    padding:20px;
+    box-sizing:border-box;
     gap:12px;
+
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-10px);
+
+    transition:0.3s;
+  }
+
+  /* MENU ACTIVO */
+  .menu.active{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
   }
 
   .menu a{
     width:100%;
-    padding:12px 14px;
+    padding:14px;
     border-radius:10px;
     background:#111;
     border:1px solid #1f2937;
@@ -331,6 +366,8 @@ body{
   /* HERO */
   .hero-pro{
     padding:60px 20px;
+    flex-direction:column;
+    text-align:center;
   }
 
   .hero-pro h1{
@@ -393,8 +430,16 @@ body{
 <body>
 
 <div class="nav">
+  
   <div class="logo">ExtinFor</div>
-  <div class="menu">
+
+  <!-- BOTON MENU -->
+  <div class="menu-toggle" id="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- MENU -->
+  <div class="menu" id="menu">
     <a href="#extintores">Extintores</a>
     <a href="#digitales">Digitales</a>
     <a href="#cobertura">Cobertura</a>
@@ -402,6 +447,7 @@ body{
     <a href="#privacidad">Privacidad</a>
     <a href="#contacto">Contacto</a>
   </div>
+
 </div>
 
 <section class="hero-pro">
@@ -618,5 +664,14 @@ body{
   <i class="fab fa-whatsapp"></i>
 </a>
 
+<script>
 
+const toggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
+
+toggle.addEventListener('click', () => {
+  menu.classList.toggle('active');
+});
+
+</script>
 </body></html>
